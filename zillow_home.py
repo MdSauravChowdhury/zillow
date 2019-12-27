@@ -3,16 +3,18 @@ import csv
 from selenium.webdriver import Chrome
 from parsel import Selector
 from selenium.common.exceptions import NoSuchElementException
+# from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.chrome.options import Options
 
-
+options = Options()
+options.headless = True
 # past your driver path
-driver = Chrome('/home/your_dir_name/chromedriver')
-# driver = Chrome('')
+# /home/name/chromedriver
+driver = Chrome(chrome_options=options, executable_path = '/home/saurav/chromedriver')
 
 # past your url
-
 # example
-# driver.get("") 
+# driver.get("https://www.zillow.com/brevard-county-fl/houses/")
 driver.get("https://www.zillow.com/homes/New-York,-NY_rb/")
 sleep(10)
 # sleep menualy 10 secound
